@@ -1,0 +1,18 @@
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      SNOWPLOW_CONSOLE_ORG_ID: ${{ secrets.SNOWPLOW_CONSOLE_ORG_ID }}
+      SNOWPLOW_CONSOLE_API_KEY_ID: ${{ secrets.SNOWPLOW_CONSOLE_API_KEY_ID }}
+      SNOWPLOW_CONSOLE_API_KEY: ${{ secrets.SNOWPLOW_CONSOLE_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: snowplow/setup-snowplow-cli@v1
+
+      - run: snowplow-cli ds publish dev --managed-from $GITHUB_REPOSITORY
