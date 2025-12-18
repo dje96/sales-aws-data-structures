@@ -15,9 +15,9 @@ data:
     vendor: com.example
     name: login
     format: jsonschema
-    version: 1-0-0
+    version: 1-0-1
   type: object
   properties:
     result:
-      enum: [success, failure]
+      enum: [200, 403]
   additionalProperties: false
