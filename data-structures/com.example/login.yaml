@@ -15,9 +15,11 @@ data:
     vendor: com.example
     name: login
     format: jsonschema
-    version: 1-0-1
+    version: 2-0-0
   type: object
+  description: Login outcome event
   properties:
     result:
+      description: The resulting http error code of a login request
       enum: [200, 403]
   additionalProperties: false
