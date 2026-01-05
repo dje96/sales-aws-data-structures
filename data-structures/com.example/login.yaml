@@ -15,11 +15,7 @@ data:
     vendor: com.example
     name: login
     format: jsonschema
-<<<<<<< Updated upstream
-    version: 1-0-1
-=======
     version: 2-0-1
->>>>>>> Stashed changes
   type: object
   description: Login outcome event
   properties:
